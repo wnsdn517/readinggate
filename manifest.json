@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Ebook Navigation",
+  "version": "1.0",
+  "description": "Navigate ebook pages using arrow keys",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+"host_permissions": [
+  "*://apps.readinggate.com/*"
+],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://apps.readinggate.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
